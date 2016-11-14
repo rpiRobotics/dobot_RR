@@ -28,7 +28,7 @@ class DobotObject():
 		while 1:
 			time.sleep(.01)
 			if self.new_command:
-				self.dobot_interface.send_absolute_position(self.desired_joint_angles[0], self.desired_joint_angles[1], self.desired_joint_angles[2], self.desired_joint_angles[3]) 
+				self.dobot_interface.send_absolute_angles(self.desired_joint_angles[0], self.desired_joint_angles[1], self.desired_joint_angles[2], self.desired_joint_angles[3]) 
 				self.new_command = False
 	
 def main():    
@@ -44,7 +44,7 @@ def main():
     t2.StartServer(port)
     RRN.RegisterTransport(t2)
     
-    my_dobot = DobotObject('COM7')
+    my_dobot = DobotObject('COM14')
 	
 
     with open('dobotRR.robodef', 'r') as f:

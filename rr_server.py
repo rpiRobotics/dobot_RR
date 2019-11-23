@@ -3,6 +3,7 @@ from DobotStatusMessage import DobotStatusMessage
 from DobotSerialInterface import DobotSerialInterface
 import time
 import RobotRaconteur as RR
+import math
 
 
 RRN = RR.RobotRaconteurNode.s
@@ -19,6 +20,10 @@ class DobotObject():
 	def setJointPositions(self,q1,q2,q3,q4):
 		self.new_command = True;
 		self.desired_joint_angles = [q1,q2,q3,q4];
+
+	def setJointPositionsRad(self,q1,q2,q3,q4):
+		self.new_command = True
+		self.desired_joint_angles = [int(math.degrees(q1)),int(math.degrees(q2)),int(math.degrees(q3)),int(math.degrees(q4))]
 
 	def getJointPositions(self):
 		angles = self.dobot_interface.current_status.angles

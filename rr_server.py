@@ -29,6 +29,10 @@ class DobotObject():
 		angles = self.dobot_interface.current_status.angles
 		return [int(angles[0]), int(angles[1]), int(angles[2]), int(angles[3])] #Need to be hard cast to ints in order for matlab to handle it.
 
+	def getJointPositionsRad(self):
+		angles = self.dobot_interface.current_status.angles
+		return [math.radians(angles[0]), math.radians(angles[1]), math.radians(angles[2]), math.radians(angles[3])] 
+
 	def loop(self):
 		print 'hi'
 		while 1:

@@ -5,6 +5,7 @@ option version 0.5
 object DobotObject
 
     function int16[] getJointPositions()
+    function double[] getJointPositionsRad()
     function void setJointPositions(int16 q1, int16 q2, int16 q3, int16 q4)
     function void setJointPositionsRad(double q1, double q2, double q3, double q4)
 

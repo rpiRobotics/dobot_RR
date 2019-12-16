@@ -95,7 +95,7 @@ class DobotSerialInterface:
         print "sending position %f %f %f" % (x, y, z)
         self._send_absolute_command(True, x, y, z, rot, move_mode)
 
-    def send_absolute_angles(self, base, rear, front, rot,  move_mode=MOVE_MODE_LINEAR):
+    def send_absolute_angles(self, base, rear, front, rot,  move_mode=MOVE_MODE_JOINTS):
         # todo: assertions for ranges
         self._send_absolute_command(False, base, rear, front, rot,  move_mode)
 

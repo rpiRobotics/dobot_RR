@@ -54,7 +54,7 @@ def main():
     t2.StartServer(port)
     RRN.RegisterTransport(t2)
 
-    my_dobot = DobotObject('COM14')
+    my_dobot = DobotObject('COM3')
 
 
     with open('dobotRR.robodef', 'r') as f:
